@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: ae24e5d8453dce24bb782daa927b7fc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2688760349707205113
+    second: Wicked Guns Logo_0
+  - first:
+      213: 7381618241405835219
+    second: Wicked Guns Logo_1
+  - first:
+      213: -2871427551203372410
+    second: Wicked Guns Logo_2
+  - first:
+      213: -1965915931251443153
+    second: Wicked Guns Logo_3
+  - first:
+      213: 6508083467988719839
+    second: Wicked Guns Logo_4
+  - first:
+      213: -1434950690220759971
+    second: Wicked Guns Logo_5
+  - first:
+      213: -1824980312782590546
+    second: Wicked Guns Logo_6
+  - first:
+      213: -2451859412589588829
+    second: Wicked Guns Logo_7
+  - first:
+      213: -4370768070405929581
+    second: Wicked Guns Logo_8
+  - first:
+      213: 9026448698006274911
+    second: Wicked Guns Logo_9
+  - first:
+      213: 2909147749910215504
+    second: Wicked Guns Logo_10
+  - first:
+      213: 129159406670428152
+    second: Wicked Guns Logo_11
+  - first:
+      213: -6172239018465247243
+    second: Wicked Guns Logo_12
+  - first:
+      213: -5983188673808206735
+    second: Wicked Guns Logo_13
+  - first:
+      213: -5777211507364089179
+    second: Wicked Guns Logo_14
+  - first:
+      213: 2049024062221076961
+    second: Wicked Guns Logo_15
+  - first:
+      213: 850313495025483316
+    second: Wicked Guns Logo_16
+  - first:
+      213: 4404175068854844651
+    second: Wicked Guns Logo_17
+  - first:
+      213: 8897894410666984804
+    second: Wicked Guns Logo_18
+  - first:
+      213: -2064846667174816122
+    second: Wicked Guns Logo_19
+  - first:
+      213: -6791851280460683511
+    second: Wicked Guns Logo_20
+  - first:
+      213: 7385770730618800357
+    second: Wicked Guns Logo_21
+  - first:
+      213: 58275571765003904
+    second: Wicked Guns Logo_22
+  - first:
+      213: -4079449181549174357
+    second: Wicked Guns Logo_23
+  - first:
+      213: 3282706473210287317
+    second: Wicked Guns Logo_24
+  - first:
+      213: 4330590852737546804
+    second: Wicked Guns Logo_25
+  - first:
+      213: 8742593117226307840
+    second: Wicked Guns Logo_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wicked Guns Logo_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 79
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9f37ada45605520800000000000000
+      internalID: 2688760349707205113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 1442
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7d98a5ea6c07660800000000000000
+      internalID: 7381618241405835219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_2
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1008
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682d04c0bd3a628d0800000000000000
+      internalID: -2871427551203372410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_3
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 994
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2af97b50e9a7b4e0800000000000000
+      internalID: -1965915931251443153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 993
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd85f0ece6b515a50800000000000000
+      internalID: 6508083467988719839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_5
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 986
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54a03f23f7061ce0800000000000000
+      internalID: -1434950690220759971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_6
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 983
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead238e131e5ca6e0800000000000000
+      internalID: -1824980312782590546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_7
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 975
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae4661dade39fdd0800000000000000
+      internalID: -2451859412589588829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_8
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 978
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395c5d7e899e753c0800000000000000
+      internalID: -4370768070405929581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_9
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 959
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5383f34443644d70800000000000000
+      internalID: 9026448698006274911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_10
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 959
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b7688177e5f5820800000000000000
+      internalID: 2909147749910215504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_11
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 961
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7bdf9cbcddac100800000000000000
+      internalID: 129159406670428152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 742
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ffb29b805dc75aa0800000000000000
+      internalID: -6172239018465247243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 735
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1747589f99177fca0800000000000000
+      internalID: -5983188673808206735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_14
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 692
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2b3473eb833dfa0800000000000000
+      internalID: -5777211507364089179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 659
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e94ae447889f6c10800000000000000
+      internalID: 2049024062221076961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_16
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 640
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ef6ba5e9beccb00800000000000000
+      internalID: 850313495025483316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_17
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 621
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec79bb04e5ce1d30800000000000000
+      internalID: 4404175068854844651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_18
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 601
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4654dbcc2dbab7b70800000000000000
+      internalID: 8897894410666984804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_19
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 541
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686556f65e03853e0800000000000000
+      internalID: -2064846667174816122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 551
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907ebd4ce3f7eb1a0800000000000000
+      internalID: -6791851280460683511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_21
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 536
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8c20719578f7660800000000000000
+      internalID: 7385770730618800357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 528
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086c222e2590fc000800000000000000
+      internalID: 58275571765003904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_23
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 520
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1e08e4592e267c0800000000000000
+      internalID: -4079449181549174357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_24
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 352
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d4139515248e8d20800000000000000
+      internalID: 3282706473210287317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_25
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 323
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a3af4af69591c30800000000000000
+      internalID: 4330590852737546804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wicked Guns Logo_26
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 50
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0019c00be1ee35970800000000000000
+      internalID: 8742593117226307840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wicked Guns Logo_0: 2688760349707205113
+      Wicked Guns Logo_1: 7381618241405835219
+      Wicked Guns Logo_10: 2909147749910215504
+      Wicked Guns Logo_11: 129159406670428152
+      Wicked Guns Logo_12: -6172239018465247243
+      Wicked Guns Logo_13: -5983188673808206735
+      Wicked Guns Logo_14: -5777211507364089179
+      Wicked Guns Logo_15: 2049024062221076961
+      Wicked Guns Logo_16: 850313495025483316
+      Wicked Guns Logo_17: 4404175068854844651
+      Wicked Guns Logo_18: 8897894410666984804
+      Wicked Guns Logo_19: -2064846667174816122
+      Wicked Guns Logo_2: -2871427551203372410
+      Wicked Guns Logo_20: -6791851280460683511
+      Wicked Guns Logo_21: 7385770730618800357
+      Wicked Guns Logo_22: 58275571765003904
+      Wicked Guns Logo_23: -4079449181549174357
+      Wicked Guns Logo_24: 3282706473210287317
+      Wicked Guns Logo_25: 4330590852737546804
+      Wicked Guns Logo_26: 8742593117226307840
+      Wicked Guns Logo_3: -1965915931251443153
+      Wicked Guns Logo_4: 6508083467988719839
+      Wicked Guns Logo_5: -1434950690220759971
+      Wicked Guns Logo_6: -1824980312782590546
+      Wicked Guns Logo_7: -2451859412589588829
+      Wicked Guns Logo_8: -4370768070405929581
+      Wicked Guns Logo_9: 9026448698006274911
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
