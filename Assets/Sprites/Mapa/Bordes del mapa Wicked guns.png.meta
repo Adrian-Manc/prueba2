@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1f097bae249107641a1e380db8dcce78
+guid: e3a7edb594201ec42b4d4307c835d7d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8591678931793251334
-    second: gettyimages-985915172-612x612_0
+      213: -3123381269503548928
+    second: Bordes del mapa Wicked guns_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,9 +72,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -98,9 +98,22 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gettyimages-985915172-612x612_0
+      name: Bordes del mapa Wicked guns_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 612
-        height: 408
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af3714e388934c880800000000000000
-      internalID: -8591678931793251334
+      spriteID: 002e125a84587a4d0800000000000000
+      internalID: -3123381269503548928
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gettyimages-985915172-612x612_0: -8591678931793251334
+      Bordes del mapa Wicked guns_0: -3123381269503548928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

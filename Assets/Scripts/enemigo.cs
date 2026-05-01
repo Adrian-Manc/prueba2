@@ -1,16 +1,40 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemigo : MonoBehaviour
 {
+    [SerializeField] Transform target;
+    NavMeshAgent agent;
+    private Animator animator;
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+
+        // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     void Update()
     {
-        
+        if (target != null)
+        {
+            agent.SetDestination(target.position);
+        }
+
+        // --- EXPLICACIÓN AQUÍ ---
+        // agent.velocity nos da la dirección y rapidez actual del enemigo.
+        // .normalized hace que el vector tenga longitud 1 (para que no afecte la velocidad al Animator).
+        Vector3 direccion = agent.velocity.normalized;
+
+        // Ahora asignamos la dirección del agente a los parámetros del Animator
+        animator.SetFloat("MovimientoX", direccion.x);
+        animator.SetFloat("MovimientoY", direccion.y);
+
+        // Opcional: Para que el animador sepa si se está moviendo o no (Speed)
+        // animator.SetFloat("Speed", agent.velocity.sqrMagnitude);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
