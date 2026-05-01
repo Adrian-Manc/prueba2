@@ -15,6 +15,7 @@ public class Disparar : MonoBehaviour
     [SerializeField] private ParticleSystem psPistola;
     [SerializeField] private ParticleSystem psEscopeta1;
     [SerializeField] private ParticleSystem psEscopeta2;
+    [SerializeField] private ParticleSystem psEscopeta1Especial;
 
     [SerializeField] private AudioSource pistolaSound;
     [SerializeField] private AudioSource escopetazoSound;
@@ -120,21 +121,24 @@ public class Disparar : MonoBehaviour
 
     public void Escopeta2()
     {
-        StartCoroutine(Escopeta1());
+        //if () {
+            StartCoroutine(Escopeta1());
+        //}
     }
 
     IEnumerator Escopeta1()
     {
-        if (psEscopeta1 != null)
-            psEscopeta1.Play();
+            if (psEscopeta1 != null)
+                psEscopeta1.Play();
 
-        if (escopetazoSound != null)
-            escopetazoSound.Play();
+            if (escopetazoSound != null)
+                escopetazoSound.Play();
 
-        yield return new WaitForSeconds(0.10f);
+            yield return new WaitForSeconds(0.10f);
 
-        if (psEscopeta2 != null)
-            psEscopeta2.Play();
+            if (psEscopeta2 != null)
+                psEscopeta2.Play();
+        
     }
 
     // =========================
@@ -154,4 +158,6 @@ public class Disparar : MonoBehaviour
 
         prefabBala = prefabBalaOriginal;
     }
+
+
 }
