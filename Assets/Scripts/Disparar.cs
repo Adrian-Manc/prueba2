@@ -48,7 +48,7 @@ public class Disparar : MonoBehaviour
         cargadorRevolver1=6;
         cargadorRevolver2 =12;
         ActualizarUI();
-        cargadorEscopeta1 =2;
+        cargadorEscopeta1=2;
         cargadorEscopeta2=10;
 
 
