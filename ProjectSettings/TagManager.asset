@@ -9,6 +9,7 @@ TagManager:
   - Enemigo
   - ArmaEspecial1
   - Muro
+  - ArmaEspecial2
   layers:
   - Default
   - TransparentFX
