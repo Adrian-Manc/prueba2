@@ -1,12 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class Disparar : MonoBehaviour
 {
-    private float cooldownEscopeta;
-    private int contadorbalasEscopeta;
-    private float cooldownPistola;
-    private int contadorbalasPistola;
+    public float fireRate1;
+    public float fireRate2;
+    private float nextFireTime1 = 0f;
+    private float nextFireTime2 = 0f;
+    public float cargadorRevolver1;
+    public TextMeshProUGUI RevolverActualBalas;
+    public float cargadorRevolver2;
+    public TextMeshProUGUI RevolverRecamaraBalas;
+    public float cargadorEscopeta1;
+    public float cargadorEscopeta2;
 
     public GameObject prefabBala;
     public GameObject prefabBalaEspecial;
@@ -33,10 +40,17 @@ public class Disparar : MonoBehaviour
 
     void Start()
     {
+        fireRate1 = 0.6f;
+        fireRate2 = 1f;
         arma = 1;
         armaAnterior = arma;
 
-        cooldownEscopeta = 3f;
+        cargadorRevolver1=6;
+        cargadorRevolver2 =12;
+        ActualizarUI();
+        cargadorEscopeta1 =2;
+        cargadorEscopeta2=10;
+
 
         // Inicializar UI correctamente
         ActualizarUIArmas();
@@ -55,16 +69,33 @@ public class Disparar : MonoBehaviour
             armaAnterior = arma;
         }
 
+        // Hacer coincidir contador de balas
+        ActualizarUI();
+
         // Disparo
         if (Input.GetMouseButtonDown(0))
         {
             switch (arma)
             {
                 case 1:
-                    Pistola();
+                    if (Time.time >= nextFireTime1)
+                    {
+                        if (cargadorRevolver1>0)
+                        {
+                            Pistola();
+                        }
+                        else
+                        {
+                            PistolaRecarga();
+                        }
+                        
+                    }
                     break;
                 case 2:
-                    Escopeta2();
+                    if (Time.time >= nextFireTime2)
+                    {
+                        Escopeta2();
+                    }
                     break;
             }
         }
@@ -99,6 +130,30 @@ public class Disparar : MonoBehaviour
             iconoEscopeta.localScale = tamañoSeleccionado;
         }
     }
+    // =========================
+    // RECARGA DE ARMA
+    // =========================
+    public void ActualizarUI()
+    {
+        RevolverActualBalas.text = cargadorRevolver1.ToString();
+        RevolverRecamaraBalas.text = cargadorRevolver2.ToString();
+    }
+    public void PistolaRecarga()
+    {
+        for (int i=0; i<6;i++)
+        {
+            if (cargadorRevolver2==0)
+            {
+                break;
+            }
+            cargadorRevolver1++;
+            cargadorRevolver2--;
+            if (cargadorRevolver2==0)
+            {
+                break;
+            }
+        }
+    }
 
     // =========================
     // DISPAROS
@@ -106,13 +161,13 @@ public class Disparar : MonoBehaviour
     public void Pistola()
     {
         GameObject bala = Instantiate(prefabBala);
-
+        nextFireTime1 = Time.time + fireRate1;
         if (pistolaSound != null)
             pistolaSound.Play();
 
         if (psPistola != null)
             psPistola.Play();
-
+        cargadorRevolver1--;
         bala.transform.position = puntero.position;
         bala.transform.rotation = transform.rotation;
 
@@ -121,9 +176,8 @@ public class Disparar : MonoBehaviour
 
     public void Escopeta2()
     {
-        //if () {
-            StartCoroutine(Escopeta1());
-        //}
+        nextFireTime2 = Time.time + fireRate2;
+        StartCoroutine(Escopeta1());
     }
 
     IEnumerator Escopeta1()
