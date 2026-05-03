@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class enemigo : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class enemigo : MonoBehaviour
 
     void Update()
     {
+        
         if (target != null)
         {
             agent.SetDestination(target.position);

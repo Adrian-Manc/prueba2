@@ -15,8 +15,8 @@ public class FogController : MonoBehaviour
 
         transform.position = new Vector3(
             cam.transform.position.x,
-            cam.transform.position.y,
-            transform.position.z
+            cam.transform.position.y
+
         );
     }
 }
