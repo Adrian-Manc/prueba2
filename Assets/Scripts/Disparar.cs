@@ -8,12 +8,16 @@ public class Disparar : MonoBehaviour
     public float fireRate2;
     private float nextFireTime1 = 0f;
     private float nextFireTime2 = 0f;
-    public float cargadorRevolver1;
+    public int cargadorRevolver1;
     public TextMeshProUGUI RevolverActualBalas;
-    public float cargadorRevolver2;
+    public int cargadorRevolver2;
     public TextMeshProUGUI RevolverRecamaraBalas;
-    public float cargadorEscopeta1;
-    public float cargadorEscopeta2;
+    public int cargadorEscopeta1;
+    public TextMeshProUGUI EscopetaActualBalas;
+    public int cargadorEscopeta2;
+    public TextMeshProUGUI EscopetaRecamaraBalas;
+
+    public Rigidbody2D jugador;
 
     public GameObject prefabBala;
     public GameObject prefabBalaEspecial;
@@ -49,7 +53,7 @@ public class Disparar : MonoBehaviour
         cargadorRevolver2 =12;
         ActualizarUI();
         cargadorEscopeta1=2;
-        cargadorEscopeta2=10;
+        cargadorEscopeta2=6;
 
 
         // Inicializar UI correctamente
@@ -94,7 +98,15 @@ public class Disparar : MonoBehaviour
                 case 2:
                     if (Time.time >= nextFireTime2)
                     {
-                        Escopeta2();
+                        if (cargadorEscopeta1>0)
+                        {
+                            Escopeta2();
+                        }
+                        else
+                        {
+                            EscopetaRecarga();
+                        }
+                        
                     }
                     break;
             }
@@ -137,6 +149,8 @@ public class Disparar : MonoBehaviour
     {
         RevolverActualBalas.text = cargadorRevolver1.ToString();
         RevolverRecamaraBalas.text = cargadorRevolver2.ToString();
+        EscopetaActualBalas.text = cargadorEscopeta1.ToString();
+        EscopetaRecamaraBalas.text = cargadorEscopeta2.ToString();
     }
     public void PistolaRecarga()
     {
@@ -149,6 +163,23 @@ public class Disparar : MonoBehaviour
             cargadorRevolver1++;
             cargadorRevolver2--;
             if (cargadorRevolver2==0)
+            {
+                break;
+            }
+        }
+    }
+
+    public void EscopetaRecarga()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if (cargadorEscopeta2 == 0)
+            {
+                break;
+            }
+            cargadorEscopeta1++;
+            cargadorEscopeta2--;
+            if (cargadorEscopeta2 == 0)
             {
                 break;
             }
@@ -184,7 +215,7 @@ public class Disparar : MonoBehaviour
     {
             if (psEscopeta1 != null)
                 psEscopeta1.Play();
-
+            cargadorEscopeta1--;
             if (escopetazoSound != null)
                 escopetazoSound.Play();
 
@@ -212,6 +243,7 @@ public class Disparar : MonoBehaviour
 
         prefabBala = prefabBalaOriginal;
     }
+
 
 
 }

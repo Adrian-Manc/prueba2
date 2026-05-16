@@ -18,7 +18,7 @@ public class RevolverSpecial : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemigo"))
+        if (collision.CompareTag("Enemigo")|| collision.CompareTag("Muro") || collision.CompareTag("lapida"))
         {
             ps1.transform.position = rb2d.transform.position;
             ps2.transform.position = rb2d.transform.position;

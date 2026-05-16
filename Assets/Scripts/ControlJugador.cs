@@ -10,6 +10,7 @@ public class ControlJugador : MonoBehaviour
     private float MovimientoX;
     private float MovimientoY;
     private Animator animator;
+    public Disparar disparar;
 
     // Private variables 
     private Rigidbody2D rb; // Reference to the Rigidbody2D component attached to the player
@@ -85,6 +86,20 @@ public class ControlJugador : MonoBehaviour
         if (other.CompareTag("ArmaEspecial1"))
         {
             GetComponentInChildren<Disparar>().RevolverEspecial2();
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Bandolera"))
+        {
+            if (GetComponentInChildren<Disparar>().cargadorRevolver2 < 100)
+            {
+                GetComponentInChildren<Disparar>().cargadorRevolver2 += Random.Range(5, 31);
+            }
+            if (GetComponentInChildren<Disparar>().cargadorEscopeta2 < 100)
+            {
+                GetComponentInChildren<Disparar>().cargadorEscopeta2 += Random.Range(1, 11);
+            }
+            GetComponentInChildren<Disparar>().ActualizarUI();
             Destroy(other.gameObject);
         }
     }

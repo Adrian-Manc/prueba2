@@ -13,6 +13,11 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 1f); // Se destruye después de 2 segundos
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject); // Se destruye al chocar con lo que sea

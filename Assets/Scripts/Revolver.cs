@@ -16,13 +16,10 @@ public class Revolver : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemigo"))
+        if (collision.CompareTag("Enemigo")|| collision.CompareTag("Muro")|| collision.CompareTag("lapida"))
         {
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Muro"))
-        {
-            Destroy(gameObject);
-        }
+
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - ArmaEspecial1
   - Muro
   - ArmaEspecial2
+  - Bandolera
+  - lapida
   layers:
   - Default
   - TransparentFX

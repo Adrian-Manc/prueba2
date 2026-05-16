@@ -51,4 +51,9 @@ public class enemigo : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnParticleTrigger()
+    {
+        Destroy(gameObject);
+    }
 }
