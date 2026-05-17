@@ -16,6 +16,8 @@ public class Disparar : MonoBehaviour
     public TextMeshProUGUI EscopetaActualBalas;
     public int cargadorEscopeta2;
     public TextMeshProUGUI EscopetaRecamaraBalas;
+    public int puntuacion;
+    public TextMeshProUGUI puntuacionTexto;
 
     public Rigidbody2D jugador;
 
@@ -48,8 +50,8 @@ public class Disparar : MonoBehaviour
         fireRate2 = 1f;
         arma = 1;
         armaAnterior = arma;
-
-        cargadorRevolver1=6;
+        puntuacion = 0;
+        cargadorRevolver1 =6;
         cargadorRevolver2 =12;
         ActualizarUI();
         cargadorEscopeta1=2;
@@ -224,6 +226,22 @@ public class Disparar : MonoBehaviour
             if (psEscopeta2 != null)
                 psEscopeta2.Play();
         
+    }
+
+    public int Puntuacion(GameObject objeto)
+    {
+        if (objeto.CompareTag("lapida"))
+        {
+            puntuacion += 6;
+            puntuacionTexto.text = puntuacion.ToString();
+        }
+        if (objeto.CompareTag("Enemigo"))
+        {
+            puntuacion += 10;
+            puntuacionTexto.text = puntuacion.ToString();
+        }
+
+        return 0;
     }
 
     // =========================

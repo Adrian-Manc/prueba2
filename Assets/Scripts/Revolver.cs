@@ -16,10 +16,11 @@ public class Revolver : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Disparar disparo = GameObject.FindWithTag("Puntero").GetComponent<Disparar>();
+        disparo.Puntuacion(collision.gameObject);
         if (collision.CompareTag("Enemigo")|| collision.CompareTag("Muro")|| collision.CompareTag("lapida"))
         {
             Destroy(gameObject);
         }
-
     }
 }

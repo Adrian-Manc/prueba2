@@ -12,6 +12,7 @@ TagManager:
   - ArmaEspecial2
   - Bandolera
   - lapida
+  - Puntero
   layers:
   - Default
   - TransparentFX
