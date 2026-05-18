@@ -7,12 +7,19 @@ public class enemigo : MonoBehaviour
     [SerializeField] Transform target;
     NavMeshAgent agent;
     private Animator animator;
+    public int knockbackForce;
+    public float knockbackDuration;
+    public int vida;
+    public int DanoInfligido;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-
+        knockbackForce = 20;
+        knockbackDuration = 0.2f;
+        DanoInfligido = 3;
+        vida = 3;
         // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -39,11 +46,26 @@ public class enemigo : MonoBehaviour
         // animator.SetFloat("Speed", agent.velocity.sqrMagnitude);
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Disparo"))
+        if (collision.gameObject.CompareTag("BalaRevolver"))
         {
-            Destroy(gameObject);
+            vida--;
+            if (vida<=0) {
+                Destroy(gameObject);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            ControlJugador player = collision.gameObject.GetComponent<ControlJugador>();
+
+            if (player != null)
+            {
+                player.Knockback(transform, knockbackForce, knockbackDuration, DanoInfligido);
+            }
         }
     }
 

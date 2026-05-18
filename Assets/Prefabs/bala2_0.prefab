@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4094666464608959685}
   m_Layer: 0
   m_Name: bala2_0
-  m_TagString: Disparo
+  m_TagString: BalaRevolver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
