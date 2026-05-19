@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -30,7 +31,7 @@ public class enemigo : MonoBehaviour
         
         if (target != null)
         {
-            agent.SetDestination(target.position);
+            //agent.SetDestination(target.position);
         }
 
         // --- EXPLICACIÓN AQUÍ ---
@@ -53,10 +54,9 @@ public class enemigo : MonoBehaviour
         if (collision.gameObject.CompareTag("BalaRevolver"))
         {
             vida--;
-            if (vida<=0) {
-                Destroy(gameObject);
-            }
+            muelto();
         }
+ 
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -71,11 +71,17 @@ public class enemigo : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("BalaEscopeta"))
+        {
+            Debug.Log("Detectado");
+            vida -= 5;
+            muelto();
+        }
     }
 
-    private void OnParticleTrigger()
+    public void muelto()
     {
-        Destroy(gameObject);
+        if (vida <= 0)
+            Destroy(gameObject);
     }
 }

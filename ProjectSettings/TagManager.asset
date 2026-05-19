@@ -13,6 +13,8 @@ TagManager:
   - Bandolera
   - lapida
   - Puntero
+  - BalaRevolver
+  - BalaEscopeta
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - UI
   - Player
   - PlayerBullets
-  - 
+  - Zombie1
   - 
   - 
   - 

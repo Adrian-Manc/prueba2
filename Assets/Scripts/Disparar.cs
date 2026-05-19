@@ -29,6 +29,7 @@ public class Disparar : MonoBehaviour
     [SerializeField] private ParticleSystem psEscopeta1;
     [SerializeField] private ParticleSystem psEscopeta2;
     [SerializeField] private ParticleSystem psEscopeta1Especial;
+    [SerializeField] private ParticleSystem psAuraAzul;
 
     [SerializeField] private AudioSource pistolaSound;
     [SerializeField] private AudioSource escopetazoSound;
@@ -56,7 +57,7 @@ public class Disparar : MonoBehaviour
         ActualizarUI();
         cargadorEscopeta1=2;
         cargadorEscopeta2=6;
-
+        psAuraAzul.Stop();
 
         // Inicializar UI correctamente
         ActualizarUIArmas();
@@ -256,10 +257,12 @@ public class Disparar : MonoBehaviour
     {
         GameObject prefabBalaOriginal = prefabBala;
         prefabBala = prefabBalaEspecial;
+        psAuraAzul.Play();
 
         yield return new WaitForSeconds(10f);
 
         prefabBala = prefabBalaOriginal;
+        psAuraAzul.Stop();
     }
 
 

@@ -18,7 +18,16 @@ public class lapida : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Disparo"))
+        if (collision.gameObject.CompareTag("BalaRevolver"))
+        {
+            psExplosion.Play();
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            Collider2D collider = GetComponent<Collider2D>();
+            Destroy(sprite);
+            Destroy(collider);
+            Destroy(gameObject, 1.5f);
+        }
+        if (collision.gameObject.CompareTag("BalaEscopeta"))
         {
             psExplosion.Play();
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -31,7 +40,7 @@ public class lapida : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("Disparo"))
+        if (other.gameObject.CompareTag("BalaEscopeta"))
         {
             psExplosion.Play();
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
