@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ae24e5d8453dce24bb782daa927b7fc6
+guid: 3c983019d9cb711468417af84c236f1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2688760349707205113
-    second: Wicked Guns Logo_0
+      213: 1288490599608851855
+    second: Selector numero_0
+  - first:
+      213: -4773567185630824995
+    second: Selector numero_1
+  - first:
+      213: 7371057713757922800
+    second: Selector numero_2
+  - first:
+      213: -5879308823188539436
+    second: Selector numero_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wicked Guns Logo_0
+      name: Selector numero_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 393
-        height: 286
+        x: 242
+        y: 438
+        width: 116
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f9f37ada45605520800000000000000
-      internalID: 2688760349707205113
+      spriteID: f8d9d16af53a1e110800000000000000
+      internalID: 1288490599608851855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Selector numero_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 438
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd57305afe1e0cdb0800000000000000
+      internalID: -4773567185630824995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Selector numero_2
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 440
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5a177efe14b4660800000000000000
+      internalID: 7371057713757922800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Selector numero_3
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 439
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7f60576cf786ea0800000000000000
+      internalID: -5879308823188539436
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wicked Guns Logo_0: 2688760349707205113
+      Selector numero_0: 1288490599608851855
+      Selector numero_1: -4773567185630824995
+      Selector numero_2: 7371057713757922800
+      Selector numero_3: -5879308823188539436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

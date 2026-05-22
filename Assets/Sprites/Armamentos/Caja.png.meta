@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae24e5d8453dce24bb782daa927b7fc6
+guid: 875ae027ea4e8294299cf1133a1d5168
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2688760349707205113
-    second: Wicked Guns Logo_0
+      213: 1189535530315151480
+    second: Caja_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wicked Guns Logo_0
+      name: Caja_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 393
-        height: 286
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f9f37ada45605520800000000000000
-      internalID: 2688760349707205113
+      spriteID: 878f32c2344128010800000000000000
+      internalID: 1189535530315151480
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wicked Guns Logo_0: 2688760349707205113
+      Caja_0: 1189535530315151480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
