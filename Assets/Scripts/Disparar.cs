@@ -145,6 +145,11 @@ public class Disparar : MonoBehaviour
             iconoEscopeta.localScale = tamañoSeleccionado;
         }
     }
+
+    public int Getarma()
+    {
+        return arma;
+    }
     // =========================
     // RECARGA DE ARMA
     // =========================
@@ -236,11 +241,11 @@ public class Disparar : MonoBehaviour
             puntuacion += 6;
             puntuacionTexto.text = puntuacion.ToString();
         }
-        if (objeto.CompareTag("Enemigo"))
+        /*if (objeto.CompareTag("Enemigo"))
         {
             puntuacion += 10;
             puntuacionTexto.text = puntuacion.ToString();
-        }
+        }*/
 
         return 0;
     }
@@ -265,6 +270,19 @@ public class Disparar : MonoBehaviour
         psAuraAzul.Stop();
     }
 
+    public void EscopetaEspecial2()
+    {
+        StartCoroutine(EscopetaEspecial1());
+    }
 
+    IEnumerator EscopetaEspecial1()
+    {
+        ParticleSystem prefabBalaOriginal = psEscopeta1;
+        psEscopeta1 = psEscopeta1Especial;
+        psAuraAzul.Play();
+        yield return new WaitForSeconds(10f);
+        psEscopeta1 = prefabBalaOriginal;
+        psAuraAzul.Stop();
+    }
 
 }

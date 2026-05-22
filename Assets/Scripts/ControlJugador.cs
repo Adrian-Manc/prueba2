@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class ControlJugador : MonoBehaviour
@@ -19,6 +20,7 @@ public class ControlJugador : MonoBehaviour
     public bool RecibirDano;
     public bool isKnockedBack;
     private ControlJugador playerControler;
+    
 
     void Start()
     {
@@ -109,7 +111,8 @@ public class ControlJugador : MonoBehaviour
         //Game Over
         if (Vida<=0)
         {
-            
+            //Time.timeScale = 0;
+            //Debug.Log("colapso");
         }
     }
 
@@ -124,11 +127,20 @@ public class ControlJugador : MonoBehaviour
         // Dejamos que la fuerza del AddForce actúe libremente en el Rigidbody2D.
     }
 
+    //especial azul
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("ArmaEspecial1"))
         {
-            GetComponentInChildren<Disparar>().RevolverEspecial2();
+            int arma = GetComponentInChildren<Disparar>().Getarma();
+            if (arma == 1)//revolver especial
+            {
+                GetComponentInChildren<Disparar>().RevolverEspecial2();
+            }
+            else if (arma == 2)//escopeta especial
+            {
+                GetComponentInChildren<Disparar>().EscopetaEspecial2();
+            }
             Destroy(other.gameObject);
         }
 
@@ -144,6 +156,23 @@ public class ControlJugador : MonoBehaviour
             }
             GetComponentInChildren<Disparar>().ActualizarUI();
             Destroy(other.gameObject);
+        }
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        //hacer que cuando la explosion le toque pare de bajarle vida y se haga invulnerable
+        if (other.CompareTag("Explosion"))
+        {
+            if (RecibirDano==false) { return; }
+            Vida -= 10;
+            InvulnerabilidadEXP2();
+        }
+        else if (other.CompareTag("ExplosionPequena"))
+        {
+            if (RecibirDano == false) { return; }
+            Vida -= 7;
+            InvulnerabilidadEXP2();
         }
     }
 
@@ -180,6 +209,10 @@ public class ControlJugador : MonoBehaviour
         Vida-= DanoEnemigo;
         RecibirDano = false;
         ActualizarUIVida();
+        LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
+        LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
+        rb.excludeLayers = LayerZombies;
+        rb.excludeLayers = LayerExplosion;
         Vector2 direccion = (transform.position - enemigoTransform.position).normalized;
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direccion * knockbackForce, ForceMode2D.Impulse);
@@ -187,6 +220,25 @@ public class ControlJugador : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isKnockedBack = false;
         yield return new WaitForSeconds(3.0f);
+        rb.excludeLayers = 0;
+        RecibirDano = true;
+    }
+
+    public void InvulnerabilidadEXP2()
+    {
+        StartCoroutine(InvulnerabilidadEXP1());
+    }
+
+    private IEnumerator InvulnerabilidadEXP1()
+    {
+        RecibirDano = false;
+        ActualizarUIVida();
+        LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
+        LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
+        rb.excludeLayers = LayerZombies;
+        rb.excludeLayers = LayerExplosion;
+        yield return new WaitForSeconds(3.0f);
+        rb.excludeLayers = 0;
         RecibirDano = true;
     }
 

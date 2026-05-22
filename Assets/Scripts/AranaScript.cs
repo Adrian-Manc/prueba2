@@ -3,8 +3,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class enemigo : MonoBehaviour
+public class AranaScript : MonoBehaviour
 {
+
     [SerializeField] Transform target;
     NavMeshAgent agent;
     private Animator animator;
@@ -12,15 +13,18 @@ public class enemigo : MonoBehaviour
     public float knockbackDuration;
     public int vida;
     public int DanoInfligido;
+    public float velocidad;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        knockbackForce = 10;
+        knockbackForce = 8;
         knockbackDuration = 0.2f;
-        DanoInfligido = 3;
-        vida = 3;
+        DanoInfligido = 2;
+        vida = 1;
+        velocidad = 6f;
+        agent.speed = velocidad;
         // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -82,5 +86,6 @@ public class enemigo : MonoBehaviour
     {
         if (vida <= 0)
             Destroy(gameObject);
+
     }
 }

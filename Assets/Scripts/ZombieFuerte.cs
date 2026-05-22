@@ -1,10 +1,10 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
-public class enemigo : MonoBehaviour
+public class ZombieFuerte : MonoBehaviour
 {
+
     [SerializeField] Transform target;
     NavMeshAgent agent;
     private Animator animator;
@@ -12,18 +12,22 @@ public class enemigo : MonoBehaviour
     public float knockbackDuration;
     public int vida;
     public int DanoInfligido;
+    private Rigidbody2D rb;
+    public bool RecibirDano;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        knockbackForce = 10;
+        rb = GetComponent<Rigidbody2D>();
+        knockbackForce = 20;
         knockbackDuration = 0.2f;
-        DanoInfligido = 3;
-        vida = 3;
+        DanoInfligido = 5;
+        vida = 10;
         // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        RecibirDano = true;
     }
 
     void Update()
@@ -58,7 +62,6 @@ public class enemigo : MonoBehaviour
             muelto();
         }
 
-
         if (collision.gameObject.CompareTag("Player"))
         {
             ControlJugador player = collision.gameObject.GetComponent<ControlJugador>();
@@ -74,13 +77,34 @@ public class enemigo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion"))
         {
-            Destroy(gameObject);
+            if (RecibirDano==false) { return; }
+            vida -= 4;
+            InvulnerabilidadEXP2();
+            muelto();
         }
+    }
+
+    public void InvulnerabilidadEXP2()
+    {
+        StartCoroutine(InvulnerabilidadEXP1());
+    }
+
+    private IEnumerator InvulnerabilidadEXP1()
+    {
+        RecibirDano = false;
+        LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
+        LayerMask LayerBalas = LayerMask.GetMask("PlayerBullets");
+        rb.excludeLayers = LayerExplosion;
+        rb.excludeLayers = LayerBalas;
+        yield return new WaitForSeconds(2f);
+        rb.excludeLayers = 0;
+        RecibirDano = true;
     }
 
     public void muelto()
     {
         if (vida <= 0)
             Destroy(gameObject);
+
     }
 }

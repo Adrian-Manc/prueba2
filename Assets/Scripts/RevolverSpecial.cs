@@ -25,7 +25,6 @@ public class RevolverSpecial : MonoBehaviour
             ps1.Play();
             ps2.Play();
             Destroy(gameObject);
-
         }
     }
 }

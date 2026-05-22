@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3328683998858192254}
   - component: {fileID: 5451389581618415713}
   - component: {fileID: 4094666464608959685}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bala2_0
   m_TagString: BalaRevolver
   m_Icon: {fileID: 0}

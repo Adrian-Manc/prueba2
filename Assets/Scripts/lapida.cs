@@ -40,7 +40,7 @@ public class lapida : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta"))
+        if (other.gameObject.CompareTag("BalaEscopeta")|| other.gameObject.CompareTag("Explosion"))
         {
             psExplosion.Play();
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();

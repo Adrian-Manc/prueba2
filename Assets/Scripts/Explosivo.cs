@@ -30,7 +30,7 @@ public class Explosivo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Disparo") && !explotando)
+        if (collision.gameObject.CompareTag("Disparo") || collision.gameObject.CompareTag("BalaRevolver") && !explotando)
         {
             Explotar();
         }

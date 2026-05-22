@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6806046502831662742}
   - component: {fileID: 6605157900579665169}
   - component: {fileID: 3179899435247792180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: balagorda2_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776293795599110414}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -224,9 +224,9 @@ GameObject:
   - component: {fileID: 221290669895733261}
   - component: {fileID: 1763950580457372219}
   - component: {fileID: 1726210840151146327}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ExplosionBala2
-  m_TagString: Disparo
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5128,9 +5128,9 @@ GameObject:
   - component: {fileID: 6883000346911048168}
   - component: {fileID: 3414827244858116580}
   - component: {fileID: 1606305408542667810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ExplosionBala1
-  m_TagString: Disparo
+  m_TagString: ExplosionPequena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
