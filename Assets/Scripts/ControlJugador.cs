@@ -63,6 +63,7 @@ public GameOverUI gameOverUI;
         tiempoTranscurrido = 0f;
         partidaActiva = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        UnityEngine.ColorUtility.TryParseHtmlString("#5E5E5E", out colorGrisParpadeo);
     }
 
     /*void Update()
@@ -228,7 +229,7 @@ if (Input.GetKeyDown(KeyCode.Alpha4) && !pocionFullUsada)
         if (other.CompareTag("Explosion"))
         {
             if (RecibirDano==false) { return; }
-            Vida -= 10;
+            Vida -= 30;
             InvulnerabilidadEXP2();
         }
         else if (other.CompareTag("ExplosionPequena"))
@@ -272,6 +273,7 @@ if (Input.GetKeyDown(KeyCode.Alpha4) && !pocionFullUsada)
         Vida-= DanoEnemigo;
         RecibirDano = false;
         ActualizarUIVida();
+        StartCoroutine(EfectoParpadeoInmunidad(1.5f));
         LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
         LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
         rb.excludeLayers = LayerZombies | LayerExplosion;
@@ -281,7 +283,7 @@ if (Input.GetKeyDown(KeyCode.Alpha4) && !pocionFullUsada)
         yield return new WaitForSeconds(knockbackDuration);
         rb.linearVelocity = Vector2.zero;
         isKnockedBack = false;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         rb.excludeLayers = 0;
         RecibirDano = true;
     }
@@ -295,10 +297,11 @@ if (Input.GetKeyDown(KeyCode.Alpha4) && !pocionFullUsada)
     {
         RecibirDano = false;
         ActualizarUIVida();
+        StartCoroutine(EfectoParpadeoInmunidad(1.5f));
         LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
         LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
         rb.excludeLayers = LayerZombies | LayerExplosion;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         rb.excludeLayers = 0;
         RecibirDano = true;
     }
@@ -443,4 +446,26 @@ void Awake()
     Time.timeScale = 1f;
     AudioListener.pause = false;
 }
+
+private IEnumerator EfectoParpadeoInmunidad(float duracionTotal)
+    {
+        float tiempoPasado = 0f;
+        float intervaloParpadeo = 0.15f;
+        while (tiempoPasado < duracionTotal)
+        {
+            if (spriteRenderer.color == Color.white)
+            {
+                spriteRenderer.color = colorGrisParpadeo;
+            }
+            else
+            {
+                spriteRenderer.color = Color.white;
+            }
+
+            yield return new WaitForSeconds(intervaloParpadeo);
+            tiempoPasado += intervaloParpadeo;
+        }
+
+        spriteRenderer.color = Color.white;
+    }
 }

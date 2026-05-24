@@ -79,7 +79,7 @@ public class Lobo : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion"))
+        if (other.gameObject.CompareTag("BalaEscopeta"))
         {
             if (RecibirDano == false) { return; }
             vida -= 4;
@@ -92,6 +92,11 @@ public class Lobo : MonoBehaviour
             if (RecibirDano == false) { return; }
             vida -= 8;
             InvulnerabilidadEXP2();
+            muelto();
+        }
+        if (other.gameObject.CompareTag("Explosion"))
+        {
+            vida -= 12;
             muelto();
         }
     }

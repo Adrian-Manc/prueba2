@@ -78,11 +78,25 @@ public class ZombieFuerte : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("BalaEscopetaEspecial") || other.gameObject.CompareTag("Explosion"))
+        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("BalaEscopetaEspecial"))
         {
             if (RecibirDano==false) { return; }
             vida -= 4;
             InvulnerabilidadEXP2();
+            muelto();
+        }
+
+        if (other.gameObject.CompareTag("ExplosionPequena"))
+        {
+            if (RecibirDano == false) { return; }
+            vida -= 7;
+            InvulnerabilidadEXP2();
+            muelto();
+        }
+
+        if (other.gameObject.CompareTag("Explosion"))
+        {
+            vida -= 10;
             muelto();
         }
     }

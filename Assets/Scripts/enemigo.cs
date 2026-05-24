@@ -75,7 +75,7 @@ public class enemigo : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion") || other.gameObject.CompareTag("BalaEscopetaEspecial"))
+        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion") || other.gameObject.CompareTag("ExplosionPequena") || other.gameObject.CompareTag("BalaEscopetaEspecial"))
         {
             if (SpawnerEnemigos.Instancia != null)
             {
