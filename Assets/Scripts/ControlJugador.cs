@@ -5,6 +5,7 @@ using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -26,10 +27,28 @@ public class ControlJugador : MonoBehaviour
     public Sprite corazonNormal;
     public Sprite corazonMedio;
     public Sprite corazonCritico;
+
+    [Header("Pociones")]
+public Image imagenPocion50;
+public Image imagenPocionFull;
+
+private bool pocion50Usada = false;
+private bool pocionFullUsada = false;
+
+[Header("Sonido")]
+public AudioSource audioSource;
+public AudioClip sonidoCuracion;
     private SpriteRenderer spriteRenderer;
     private Color colorGrisParpadeo;
     private float tiempoTranscurrido;
     private bool partidaActiva;
+    
+    [Header("Game Over")]
+public GameObject panelGameOver;
+
+public TimerUI timerUI;
+
+public GameOverUI gameOverUI;
 
     void Start()
     {
@@ -127,13 +146,23 @@ public class ControlJugador : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) { Vida -= 30; ActualizarUIVida(); }
 
+        // Poción 50%
+if (Input.GetKeyDown(KeyCode.Alpha3) && !pocion50Usada)
+{
+    UsarPocion50();
+}
+
+// Poción Full
+if (Input.GetKeyDown(KeyCode.Alpha4) && !pocionFullUsada)
+{
+    UsarPocionFull();
+}
+
         //Game Over
-        if (Vida<=0)
-        {
-            partidaActiva = false;
-            //Time.timeScale = 0;
-            //Debug.Log("colapso");
-        }
+        if (Vida <= 0)
+{
+    GameOver();
+}
     }
 
     void FixedUpdate()
@@ -280,22 +309,20 @@ public class ControlJugador : MonoBehaviour
     }
 
     public void curar(int curarvalor)
+{
+    Vida += curarvalor;
+
+    if (Vida > 100)
     {
-        if (Vida<100)
-        {
-            for (int i=1; i< curarvalor; i++)
-            {
-                if (Vida == 100)
-                    break;
-                Vida++;
-            }
-        }
-        ActualizarUIVida();
+        Vida = 100;
     }
+
+    ActualizarUIVida();
+}
 
     public void ActualizarUIVida()
     {
-        TextoVida.text = Vida+"%";
+        TextoVida.text = Vida+"";
         Color color100 = Color.white;
         Color color50 = new Color(1f, 0.5f, 0f); //naranja
         Color color0 = new Color(0.5f, 0f, 0f); //rojo
@@ -324,4 +351,96 @@ public class ControlJugador : MonoBehaviour
                 imagenCorazon.sprite = corazonNormal;
         }
     }
+    void UsarPocion50()
+{
+    int curacion = 50;
+
+    curar(curacion);
+
+    // sonido
+    if (audioSource != null && sonidoCuracion != null)
+    {
+        audioSource.PlayOneShot(sonidoCuracion);
+    }
+
+    // ocultar imagen
+    if (imagenPocion50 != null)
+    {
+        imagenPocion50.enabled = false;
+    }
+
+    pocion50Usada = true;
+
+    Debug.Log("Poción +50 usada");
+}
+
+void UsarPocionFull()
+{
+    Vida = 100;
+
+    ActualizarUIVida();
+
+    // sonido
+    if (audioSource != null && sonidoCuracion != null)
+    {
+        audioSource.PlayOneShot(sonidoCuracion);
+    }
+
+    // ocultar imagen
+    if (imagenPocionFull != null)
+    {
+        imagenPocionFull.enabled = false;
+    }
+
+    pocionFullUsada = true;
+
+    Debug.Log("Poción Full usada");
+}
+void GameOver()
+{
+    partidaActiva = false;
+
+    // detener tiempo
+    Time.timeScale = 0f;
+
+    // mostrar datos finales (puntuación + tiempo)
+    if (gameOverUI != null)
+    {
+        gameOverUI.MostrarGameOver();
+    }
+    
+    // mostrar menú
+    if (panelGameOver != null)
+    {
+        panelGameOver.SetActive(true);
+    }
+
+    if (timerUI != null)
+{
+    timerUI.DetenerTiempo();
+}
+
+    AudioListener.pause = true;
+    Debug.Log("FIN DE LA PARTIDA");
+}
+public void Reintentar()
+{
+    Time.timeScale = 1f;
+    AudioListener.pause = false;
+
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+}
+
+public void IrAlMenu()
+{
+    Time.timeScale = 1f;
+    AudioListener.pause = false;
+
+    SceneManager.LoadScene("Game");
+}
+void Awake()
+{
+    Time.timeScale = 1f;
+    AudioListener.pause = false;
+}
 }

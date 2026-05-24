@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: ab86baa0f5fc6ed4785fdd9098f90e8e
+guid: bbb57de832dc6054c89914ccb806050a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7989003449173814567
-    second: Darren1_0
-  - first:
-      213: -7998425732618681497
-    second: Darren1_1
-  - first:
-      213: -7959366392973135643
-    second: Darren1_2
+      213: 7226405695312399860
+    second: Pausa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Darren1_0
+      name: Pausa_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
-        width: 28
-        height: 48
+        y: 1
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72d20693f44aede60800000000000000
-      internalID: 7989003449173814567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Darren1_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7638be47c22eff090800000000000000
-      internalID: -7998425732618681497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Darren1_2
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 0
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e077a5af66aa8190800000000000000
-      internalID: -7959366392973135643
+      spriteID: 4fd84f751b9594460800000000000000
+      internalID: 7226405695312399860
       vertices: []
       indices: 
       edges: []
@@ -211,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Darren1_0: 7989003449173814567
-      Darren1_1: -7998425732618681497
-      Darren1_2: -7959366392973135643
+      Pausa_0: 7226405695312399860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
