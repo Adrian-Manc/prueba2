@@ -14,6 +14,8 @@ public class AranaScript : MonoBehaviour
     public int vida;
     public int DanoInfligido;
     public float velocidad;
+    public GameObject[] drops;
+    public float probabilidadDrop;
 
     void Start()
     {
@@ -21,9 +23,10 @@ public class AranaScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         knockbackForce = 8;
         knockbackDuration = 0.2f;
-        DanoInfligido = 2;
+        DanoInfligido = 5;
         vida = 1;
         velocidad = 6f;
+        probabilidadDrop = 0.5f;
         agent.speed = velocidad;
         // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
         agent.updateRotation = false;
@@ -76,16 +79,40 @@ public class AranaScript : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion"))
+        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion") || other.gameObject.CompareTag("BalaEscopetaEspecial"))
         {
+            if (SpawnerEnemigos.Instancia != null)
+            {
+                SpawnerEnemigos.Instancia.ReducirContadorEnemigos();
+            }
             Destroy(gameObject);
         }
     }
 
     public void muelto()
     {
-        if (vida <= 0)
+        if (vida <= 0) { 
+            if (UnityEngine.Random.value <= probabilidadDrop && drops.Length > 0)
+            {
+                int index = UnityEngine.Random.Range(0, drops.Length);
+                Instantiate(drops[index], transform.position, Quaternion.identity);
+            }
+            if (SpawnerEnemigos.Instancia != null)
+            {
+                SpawnerEnemigos.Instancia.ReducirContadorEnemigos();
+            }
             Destroy(gameObject);
+        }
+    }
 
+    public void settarget(Transform neotarget)
+    {
+        target = neotarget;
+
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+        if (target != null && agent != null)
+        {
+            agent.SetDestination(target.position);
+        }
     }
 }

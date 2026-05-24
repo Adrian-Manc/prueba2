@@ -114,6 +114,27 @@ public class Disparar : MonoBehaviour
                     break;
             }
         }
+
+        //Recargar
+        if (Input.GetKey(KeyCode.R))
+        {
+            if (arma==1)
+            {
+                if (cargadorRevolver1 < 6)
+                {
+                    PistolaRecarga();
+                }
+                
+            }
+            else if (arma == 2)
+            {
+                if (cargadorEscopeta1 < 2)
+                {
+                    EscopetaRecarga();
+                }
+            }
+            ActualizarUI();
+        }
     }
 
     // =========================
@@ -238,14 +259,29 @@ public class Disparar : MonoBehaviour
     {
         if (objeto.CompareTag("lapida"))
         {
-            puntuacion += 6;
+            puntuacion += 5;
             puntuacionTexto.text = puntuacion.ToString();
         }
-        /*if (objeto.CompareTag("Enemigo"))
+        if (objeto.CompareTag("zombie"))
+        {
+            puntuacion += 20;
+            puntuacionTexto.text = puntuacion.ToString();
+        }
+        if (objeto.CompareTag("zombiefuerte"))
+        {
+            puntuacion += 40;
+            puntuacionTexto.text = puntuacion.ToString();
+        }
+        if (objeto.CompareTag("arana"))
         {
             puntuacion += 10;
             puntuacionTexto.text = puntuacion.ToString();
-        }*/
+        }
+        if (objeto.CompareTag("lobo"))
+        {
+            puntuacion += 70;
+            puntuacionTexto.text = puntuacion.ToString();
+        }
 
         return 0;
     }

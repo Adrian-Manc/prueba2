@@ -18,7 +18,7 @@ public class Revolver : MonoBehaviour
     {
         Disparar disparo = GameObject.FindWithTag("Puntero").GetComponent<Disparar>();
         disparo.Puntuacion(collision.gameObject);
-        if (collision.CompareTag("Enemigo")|| collision.CompareTag("Muro")|| collision.CompareTag("lapida"))
+        if (collision.CompareTag("zombie") || collision.CompareTag("zombiefuerte") || collision.CompareTag("arana") || collision.CompareTag("lobo") || collision.CompareTag("Muro")|| collision.CompareTag("lapida"))
         {
             Destroy(gameObject);
         }

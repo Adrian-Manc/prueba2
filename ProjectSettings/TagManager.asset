@@ -17,6 +17,13 @@ TagManager:
   - BalaEscopeta
   - Explosion
   - ExplosionPequena
+  - pocion2
+  - pocion1
+  - zombie
+  - lobo
+  - arana
+  - zombiefuerte
+  - BalaEscopetaEspecial
   layers:
   - Default
   - TransparentFX

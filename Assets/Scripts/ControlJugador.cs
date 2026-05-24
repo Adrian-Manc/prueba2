@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -20,7 +22,14 @@ public class ControlJugador : MonoBehaviour
     public bool RecibirDano;
     public bool isKnockedBack;
     private ControlJugador playerControler;
-    
+    public Image imagenCorazon;
+    public Sprite corazonNormal;
+    public Sprite corazonMedio;
+    public Sprite corazonCritico;
+    private SpriteRenderer spriteRenderer;
+    private Color colorGrisParpadeo;
+    private float tiempoTranscurrido;
+    private bool partidaActiva;
 
     void Start()
     {
@@ -32,6 +41,9 @@ public class ControlJugador : MonoBehaviour
         Vida = 100;
         playerControler = GetComponent<ControlJugador>();
         RecibirDano= true;
+        tiempoTranscurrido = 0f;
+        partidaActiva = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     /*void Update()
@@ -87,6 +99,11 @@ public class ControlJugador : MonoBehaviour
     {
         // Si está bajo efectos de knockback, limpiamos el vector de movimiento 
         // para que no intente caminar en FixedUpdate.
+        if (partidaActiva)
+        {
+            tiempoTranscurrido += Time.deltaTime;
+        }
+
         if (!playerControler.PuedeMoverse())
         {
             movement = Vector2.zero;
@@ -108,9 +125,12 @@ public class ControlJugador : MonoBehaviour
 
         movement = new Vector2(MovimientoX, MovimientoY).normalized;
 
+        if (Input.GetKeyDown(KeyCode.Space)) { Vida -= 30; ActualizarUIVida(); }
+
         //Game Over
         if (Vida<=0)
         {
+            partidaActiva = false;
             //Time.timeScale = 0;
             //Debug.Log("colapso");
         }
@@ -123,6 +143,8 @@ public class ControlJugador : MonoBehaviour
         {
             rb.linearVelocity = movement * speed;
         }
+
+        
         // SI NO PUEDE MOVERSE (Knockback): No hacemos NADA aquí. 
         // Dejamos que la fuerza del AddForce actúe libremente en el Rigidbody2D.
     }
@@ -155,6 +177,18 @@ public class ControlJugador : MonoBehaviour
                 GetComponentInChildren<Disparar>().cargadorEscopeta2 += Random.Range(1, 11);
             }
             GetComponentInChildren<Disparar>().ActualizarUI();
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("pocion1"))
+        {
+            curar(15);
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("pocion2"))
+        {
+            curar(100);
             Destroy(other.gameObject);
         }
     }
@@ -211,8 +245,7 @@ public class ControlJugador : MonoBehaviour
         ActualizarUIVida();
         LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
         LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
-        rb.excludeLayers = LayerZombies;
-        rb.excludeLayers = LayerExplosion;
+        rb.excludeLayers = LayerZombies | LayerExplosion;
         Vector2 direccion = (transform.position - enemigoTransform.position).normalized;
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direccion * knockbackForce, ForceMode2D.Impulse);
@@ -235,8 +268,7 @@ public class ControlJugador : MonoBehaviour
         ActualizarUIVida();
         LayerMask LayerExplosion = LayerMask.GetMask("Explosion1");
         LayerMask LayerZombies = LayerMask.GetMask("Zombie1");
-        rb.excludeLayers = LayerZombies;
-        rb.excludeLayers = LayerExplosion;
+        rb.excludeLayers = LayerZombies | LayerExplosion;
         yield return new WaitForSeconds(3.0f);
         rb.excludeLayers = 0;
         RecibirDano = true;
@@ -247,8 +279,49 @@ public class ControlJugador : MonoBehaviour
         return !isKnockedBack;
     }
 
+    public void curar(int curarvalor)
+    {
+        if (Vida<100)
+        {
+            for (int i=1; i< curarvalor; i++)
+            {
+                if (Vida == 100)
+                    break;
+                Vida++;
+            }
+        }
+        ActualizarUIVida();
+    }
+
     public void ActualizarUIVida()
     {
         TextoVida.text = Vida+"%";
+        Color color100 = Color.white;
+        Color color50 = new Color(1f, 0.5f, 0f); //naranja
+        Color color0 = new Color(0.5f, 0f, 0f); //rojo
+        Color colorFinal;
+
+        if (Vida > 50)
+        {
+            float t = (Vida - 50f) / 50f; // de 0 a 1
+            colorFinal = Color.Lerp(color50, color100, t);
+        }
+        else
+        {
+            float t = Vida / 50f; // de 0 a 1
+            colorFinal = Color.Lerp(color0, color50, t);
+        }
+
+        TextoVida.color = colorFinal;
+
+        if (imagenCorazon != null)
+        {
+            if (Vida <= 25f)
+                imagenCorazon.sprite = corazonCritico;
+            else if (Vida <= 50f)
+                imagenCorazon.sprite = corazonMedio;
+            else
+                imagenCorazon.sprite = corazonNormal;
+        }
     }
 }

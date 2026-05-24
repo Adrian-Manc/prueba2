@@ -5,7 +5,7 @@ public class PulseUI : MonoBehaviour
     public float speed = 2f;          // Velocidad base
     public float scaleAmount = 0.2f;  // Escala base
 
-    public VidaJugador vidaJugador;   // Referencia al script de vida
+    public ControlJugador vidaJugador;   // Referencia al script de vida
 
     private Vector3 originalScale;
 
@@ -20,8 +20,8 @@ public class PulseUI : MonoBehaviour
         if (vidaJugador == null)
             return;
 
-        float porcentaje = vidaJugador.ObtenerPorcentajeVida();
-
+        float porcentaje = vidaJugador.Vida;
+        
         float velocidadActual = speed;
         float escalaActual = scaleAmount;
 

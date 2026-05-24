@@ -2,9 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieFuerte : MonoBehaviour
+public class Lobo : MonoBehaviour
 {
-
     [SerializeField] Transform target;
     NavMeshAgent agent;
     private Animator animator;
@@ -14,18 +13,20 @@ public class ZombieFuerte : MonoBehaviour
     public int DanoInfligido;
     private Rigidbody2D rb;
     public bool RecibirDano;
+    public float velocidad;
     public GameObject[] drops;
     public float probabilidadDrop;
-
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
-        knockbackForce = 20;
+        knockbackForce = 50;
         knockbackDuration = 0.2f;
-        DanoInfligido = 10;
-        vida = 10;
+        DanoInfligido = 18;
+        vida = 12;
+        velocidad = 3f;
+        agent.speed = velocidad;
         // Bloqueamos rotaciones 3D para que no se "tuerza" el sprite
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -78,10 +79,18 @@ public class ZombieFuerte : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("BalaEscopetaEspecial") || other.gameObject.CompareTag("Explosion"))
+        if (other.gameObject.CompareTag("BalaEscopeta") || other.gameObject.CompareTag("Explosion"))
         {
-            if (RecibirDano==false) { return; }
+            if (RecibirDano == false) { return; }
             vida -= 4;
+            InvulnerabilidadEXP2();
+            InvulnerabilidadEXP2();
+            muelto();
+        }
+        if (other.gameObject.CompareTag("BalaEscopetaEspecial"))
+        {
+            if (RecibirDano == false) { return; }
+            vida -= 8;
             InvulnerabilidadEXP2();
             muelto();
         }
