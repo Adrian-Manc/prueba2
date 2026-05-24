@@ -50,6 +50,10 @@ public TimerUI timerUI;
 
 public GameOverUI gameOverUI;
 
+[Header("Victoria")]
+public GameObject panelVictoria;
+private bool victoriaActivada = false;
+
     void Start()
     {
         // Initialize the Rigidbody2D component
@@ -122,6 +126,12 @@ public GameOverUI gameOverUI;
         if (partidaActiva)
         {
             tiempoTranscurrido += Time.deltaTime;
+        }
+
+        // Victoria después de 10 minutos
+        if (tiempoTranscurrido >= 600f && !victoriaActivada)
+        {
+            Victoria();
         }
 
         if (!playerControler.PuedeMoverse())
@@ -426,6 +436,31 @@ void GameOver()
     AudioListener.pause = true;
     Debug.Log("FIN DE LA PARTIDA");
 }
+
+void Victoria()
+{
+    victoriaActivada = true;
+    partidaActiva = false;
+
+    // detener tiempo
+    Time.timeScale = 0f;
+
+    // mostrar panel victoria
+    if (panelVictoria != null)
+    {
+        panelVictoria.SetActive(true);
+    }
+
+    if (timerUI != null)
+    {
+        timerUI.DetenerTiempo();
+    }
+
+    AudioListener.pause = true;
+
+    Debug.Log("VICTORIA");
+}
+
 public void Reintentar()
 {
     Time.timeScale = 1f;
